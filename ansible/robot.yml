@@ -1,0 +1,27 @@
+---
+
+- hosts: robot
+  vars:
+    pip_install_packages:
+      - name: docker
+
+  roles:
+    - { role: geerlingguy.pip, become: true}
+    - role: ansible-role-ros-adafruitmotorhat
+
+  tasks:
+    - name: Check that robot is online
+      ping:
+
+    - name: Start usb cam docker container
+      docker_container:
+        name: ros_usb_cam
+        image: "frankjoshua/ros-usb-cam"
+        network_mode: "host"
+        restart_policy: "unless-stopped"
+        devices:
+          - "/dev/video0:/dev/video0"
+        env:
+          ROS_MASTER_URI: "{{ ros_master_uri }}"
+          ROS_IP: "{{ ros_ip }}"
+        command: rosrun usb_cam usb_cam_node _width:=320 _height:=240 _fps:=30 _camera_frame_id:=camera_ceiling _camera_info_url:=file:///calibration.yaml _pixel_format:=yuyv

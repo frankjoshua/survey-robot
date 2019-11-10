@@ -1,0 +1,19 @@
+---
+
+- name: Start Adafruit motor hat docker container
+  docker_container:
+    name: ros_adafruit_motor_hat
+    image: "frankjoshua/ros-adafruit-motor-hat"
+    network_mode: "host"
+    restart_policy: "unless-stopped"
+    capabilities:
+      - SYS_RAWIO
+    devices:
+      - "/dev/i2c-0:/dev/i2c-0"
+      - "/dev/i2c-1:/dev/i2c-1"
+      - "/lib/modules:/lib/modules"
+      - "/dev/mem:/dev/mem"
+    privileged: yes
+    env:
+      ROS_MASTER_URI: "{{ ros_master_uri }}"
+      ROS_IP: "{{ ros_ip }}"

@@ -1,0 +1,20 @@
+---
+
+- include: ssh.yml
+
+- hosts: server
+  vars:
+    pip_install_packages:
+      - name: docker
+    docker_apt_arch: "{{ cpu_arch }}"
+
+  roles:
+    - { role: geerlingguy.docker, become: true}
+    - { role: geerlingguy.pip, become: true}
+    - { role: ansible-role-ros-master }
+    - { role: ansible-role-ros-slamtec-m1m1, laser_ip:  "192.168.2.124"}
+    - { role: ansible-role-ros-velocity-muxer }
+
+  tasks:
+    - name: Check that server is online
+      ping:

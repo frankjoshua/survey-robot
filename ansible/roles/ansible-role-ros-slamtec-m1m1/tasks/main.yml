@@ -1,0 +1,12 @@
+---
+
+- name: Start Slamtec m1m1 node docker container
+  docker_container:
+    name: ros_slamtec_m1m1
+    image: "frankjoshua/ros-slamtec-m1m1:{{ cpu_arch }}"
+    network_mode: "host"
+    restart_policy: "unless-stopped"
+    env:
+      ROS_MASTER_URI: "http://{{ ansible_ssh_host }}:11311"
+      ROS_IP: "{{ ansible_ssh_host }}"
+      LASER_IP: "{{ laser_ip }}"

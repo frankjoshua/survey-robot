@@ -1,0 +1,7 @@
+---
+
+- include: ssh.yml
+
+- include: server.yml
+
+- include: robot.yml
