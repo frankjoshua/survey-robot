@@ -9,4 +9,4 @@
     env:
       ROS_MASTER_URI: "{{ ros_master_uri }}"
       ROS_IP: "{{ ros_ip }}"
-    command: "python /node.py --computer_topic /cmd_vel/computer --manual_topic /pocketbot/cmd_vel --output_topic /cmd_vel --delay 5 -x 0.2 -z 0.2"
+    command: "python /node.py --computer_topic {{ computer_topic }} --manual_topic {{ manual_topic }} --output_topic {{ output_topic }} --delay 5 -x {{ x_speed_multiplier }} -z {{ z_speed_multiplier }} "

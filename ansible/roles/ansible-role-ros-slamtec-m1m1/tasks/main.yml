@@ -10,3 +10,4 @@
       ROS_MASTER_URI: "http://{{ ansible_ssh_host }}:11311"
       ROS_IP: "{{ ansible_ssh_host }}"
       LASER_IP: "{{ laser_ip }}"
+    restart: "{{ docker_restart }}"

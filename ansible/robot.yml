@@ -16,7 +16,7 @@
     - name: Start usb cam docker container
       docker_container:
         name: ros_usb_cam
-        image: "frankjoshua/ros-usb-cam"
+        image: "frankjoshua/ros-usb-cam:{{ cpu_arch }}"
         network_mode: "host"
         restart_policy: "unless-stopped"
         devices:
