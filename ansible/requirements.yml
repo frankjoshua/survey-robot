@@ -5,3 +5,5 @@
 - src: https://github.com/geerlingguy/ansible-role-pip
   version: master
   name: geerlingguy.pip
+
+- src: https://github.com/frankjoshua/ansible-role-ros-master.git
