@@ -24,7 +24,6 @@
   - name: Add Users
     user:
       name: operator
-      group: 1001
       groups: wheel,docker,adm,cdrom,sudo,audio,dip,video,plugdev
       shell: /bin/bash
       state: present

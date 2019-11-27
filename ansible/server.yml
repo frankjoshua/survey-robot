@@ -12,7 +12,7 @@
     - { role: geerlingguy.docker, become: true}
     - { role: geerlingguy.pip, become: true}
     - { role: ansible-role-ros-master }
-    - { role: ansible-role-ros-slamtec-m1m1, laser_ip:  "192.168.2.124", docker_restart: yes}
+    - { role: ansible-role-ros-slamtec-m1m1, laser_ip:  "192.168.11.1", docker_restart: yes}
     - { role: ansible-role-ros-velocity-muxer, x_speed_multiplier: "0.7" , z_speed_multiplier: "0.2", manual_topic: "/pocketbot/cmd_vel"}
 
   tasks:

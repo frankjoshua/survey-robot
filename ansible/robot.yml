@@ -1,12 +1,14 @@
 ---
 
 - hosts: robot
-  vars:
-    pip_install_packages:
-      - name: docker
 
+  pre_tasks:
+    - name: Install docker py
+      pip:
+        name: docker
+      become: true
+      
   roles:
-    - { role: geerlingguy.pip, become: true}
     - role: ansible-role-ros-adafruitmotorhat
 
   tasks:
