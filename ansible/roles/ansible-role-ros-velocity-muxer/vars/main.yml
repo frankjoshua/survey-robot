@@ -1,7 +1,0 @@
----
-
-x_speed_multiplier: "1.0"
-z_speed_multiplier: "1.0"
-output_topic: "/cmd_vel"
-manual_topic: "/cmd_vel/manual"
-computer_topic: "/cmd_vel/computer"

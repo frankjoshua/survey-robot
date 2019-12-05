@@ -7,3 +7,5 @@
   name: geerlingguy.pip
 
 - src: https://github.com/frankjoshua/ansible-role-ros-master.git
+- src: https://github.com/frankjoshua/ansible-role-ros-adafruitmotorhat.git
+- src: https://github.com/frankjoshua/ansible-role-ros-velocity-muxer
