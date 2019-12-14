@@ -9,3 +9,6 @@
 - src: https://github.com/frankjoshua/ansible-role-ros-master.git
 - src: https://github.com/frankjoshua/ansible-role-ros-adafruitmotorhat.git
 - src: https://github.com/frankjoshua/ansible-role-ros-velocity-muxer
+- src: https://github.com/frankjoshua/ansible-role-ros-bridge-suite
+- src: https://github.com/frankjoshua/ansible-role-ros-slamtec-m1m1
+- src: https://github.com/frankjoshua/ansible-role-rpi-uv4l

@@ -6,14 +6,14 @@
   vars:
     pip_install_packages:
       - name: docker
-    docker_apt_arch: "{{ cpu_arch }}"
 
   roles:
-    - { role: geerlingguy.docker, become: true}
+    - { role: geerlingguy.docker, ansible_distribution_release: disco, become: true}
     - { role: geerlingguy.pip, become: true}
     - { role: ansible-role-ros-master }
-    - { role: ansible-role-ros-slamtec-m1m1, laser_ip:  "192.168.11.1", docker_restart: yes}
+    - { role: ansible-role-ros-slamtec-m1m1, laser_ip:  "192.168.2.71", docker_restart: yes}
     - { role: ansible-role-ros-velocity-muxer, x_speed_multiplier: "0.7" , z_speed_multiplier: "0.2", manual_topic: "/pocketbot/cmd_vel"}
+    - { role: ansible-role-ros-bridge-suite }
 
   tasks:
     - name: Check that server is online

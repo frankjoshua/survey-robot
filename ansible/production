@@ -1,12 +1,12 @@
 #cpu_arch should be amd64 for desktops arm64 for jetson tx2 or nano and armhf for Raspberry Pi
-rpi ansible_ssh_host=192.168.2.118 cpu_arch=armhf ansible_ssh_user=pirate   # ansible_ssh_private_key_file=~/.ssh/robot_id_rsa
-localhost ansible_ssh_host=192.168.2.95 cpu_arch=amd64
+rpi ansible_ssh_host=192.168.2.149 cpu_arch=armhf ansible_ssh_user=pirate   # ansible_ssh_private_key_file=~/.ssh/robot_id_rsa
+ros_master ansible_ssh_host=192.168.2.121 cpu_arch=amd64
 
 [all:vars]
-ros_master_uri="http://192.168.2.95:11311"
+ros_master_uri="http://192.168.2.121:11311"
 
 [robot]
 rpi
 
 [server]
-localhost
+ros_master

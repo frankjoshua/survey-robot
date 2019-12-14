@@ -9,6 +9,7 @@
       become: true
       
   roles:
+    - role: ansible-role-rpi-uv4l
     - role: ansible-role-ros-adafruitmotorhat
 
   tasks:
